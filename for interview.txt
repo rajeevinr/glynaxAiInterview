@@ -1,0 +1,40 @@
+**docker commands**
+
+docker -compose up                   docker start
+docker -compose up -d		     docker start but in bg
+
+docker -compose up --build	     clear reset and build
+docker -compose down -v
+
+docker -compose down		     stop docker
+
+docker ps			     checks which are running containers
+
+docker-compose logs    		     checks logs of particular container
+
+
+**api health checks and get data comands**
+
+http://localhost:5000/api/health		           health check it returns ok in browser
+
+curl.exe http://localhost:5000/api/customers?page=1&limit=5         get 5 customers in 1 page
+curl.exe http://localhost:8000/api/customers?page=1&limit=5
+
+
+curl.exe http://localhost:5000/api/customers1                       get 1 customer in 1 page
+curl.exe http://localhost:8000/api/customers1
+
+for powershell 
+Invoke -WebRequest -Uri "http://localhost:8000/api/ingest" -Method Post
+
+for checking all 3 working fast APIs here is http://localhost:8000/docs
+
+PostgreSQL
+
+"DATABASE_URL", "postgresql://postgres:password@postgres:5432/customer_db"
+
+password is password
+db name is customerdb
+username is postgres
+port is 5432
+
